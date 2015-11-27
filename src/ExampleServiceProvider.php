@@ -1,6 +1,6 @@
 <?php
 
-namespace FreengersDev\Todo;
+namespace freengers;
 
 use Illuminate\Support\ServiceProvider;
 

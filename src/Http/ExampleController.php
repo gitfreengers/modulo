@@ -1,8 +1,8 @@
 <?php
 
-namespace FreengersDev\Todo\Http;
+namespace freengers;
 
-use FreengersDev\Todo\Example;
+use freengers\Example;
 use App\Http\Controllers\Controller;
 
 class ExampleController extends Controller

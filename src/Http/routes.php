@@ -1,3 +1,3 @@
 <?php
 
-Route::get('todo/list', 'FreengersDev\Todo\Http\ExampleController@getUserTodoList');
+Route::get('todo/list', 'freengers\Http\ExampleController@getUserTodoList');
