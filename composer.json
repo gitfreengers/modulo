@@ -1,0 +1,19 @@
+{
+	"name" : "freengersDev/todo",
+	"description" : "Ejemplo de modulo para laravel",
+	"license" : "Self",
+	"authors" : [{
+			"name" : "Freengers",
+			"email" : "devfreengers@freengers.com"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"FreengersDev\\Todo\\" : "src/"
+		}
+	},
+	"minimum-stability" : "dev",
+	"require" : {
+		"illuminate/support" : "~5"
+	}
+}
