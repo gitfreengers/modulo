@@ -1,18 +1,18 @@
-## Instalaci髇
+## Instalaci贸n
 
-### Paso 1: Instalaci髇 de paquete
+### Paso 1: Instalaci贸n de paquete
 
 ```
 composer require freengers-dev/firstmodule "dev-master" 
 ```
 
-Una vez realizada la instalaci髇, agregar el proveedor al archivo "config/app.php"
+Una vez realizada la instalaci贸n, agregar el proveedor al archivo "config/app.php"
 
 ```
 Freengersdev\firstmodule\ExampleServiceProvider::class,	
 ```
 
-### Paso 2: Instalaci髇 de migraciones
+### Paso 2: Instalaci贸n de migraciones
 
 Correr el comando vendor:publish para podere copiar las migraciones al directorio principal:
 
@@ -20,7 +20,7 @@ Correr el comando vendor:publish para podere copiar las migraciones al directori
 php artisan vendor:publish
 ```
 
-### Paso 3: Actualizaci髇 de base de datos
+### Paso 3: Actualizaci贸n de base de datos
 ```
 php artisan migrate
 ```
@@ -28,5 +28,7 @@ php artisan migrate
 ## Rutas 
 
 /todo/list
+
 /todo/edit
+
 /todo/create
