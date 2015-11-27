@@ -8,8 +8,8 @@
 		}
 	],
 	"autoload" : {
-		"psr-4" : {
-			"firstmodule" : "src/"
+		"psr-0" : {
+			"FreengersDev\\Todo\\" : "src/"
 		}
 	},
 	"minimum-stability" : "dev",
