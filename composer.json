@@ -1,5 +1,5 @@
 {
-	"name" : "freengers-dev/todo",
+	"name" : "freengers-dev/firstmodule",
 	"description" : "Ejemplo de modulo para laravel",
 	"license" : "Self",
 	"authors" : [{
@@ -9,7 +9,7 @@
 	],
 	"autoload" : {
 		"psr-4" : {
-			"FreengersDev\\Todo\\" : "src/"
+			"firstmodule" : "src/"
 		}
 	},
 	"minimum-stability" : "dev",
