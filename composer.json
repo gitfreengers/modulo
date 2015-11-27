@@ -1,0 +1,24 @@
+{
+	"name" : "freengersdev/firstmodule",
+	"description" : "Ejemplo de modulo para laravel",
+	"license" : "Self",
+	"authors" : [{
+			"name" : "Freengers",
+			"email" : "devfreengers@freengers.com"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Freengersdev\\firstmodule\\" : "src/"
+		}
+	},
+	"minimum-stability" : "dev",
+	"require" : {
+		"illuminate/support" : "~5",
+		"laravel/framework" : "5.1.19",
+		"laravelcollective/html" : "5.1.6"
+	},
+	"suggest" : {
+		"freengers-dev/firstmodule" : "Las vistas estan escritas con Bootstrap 3 y fortawesome se sugiere tenerlos instalados"
+	}
+}
