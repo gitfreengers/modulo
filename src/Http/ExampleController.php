@@ -1,9 +1,9 @@
 <?php
 
-namespace freengers;
+namespace Freengersdev\firstmodule\Http;
 
-use freengers\Example;
 use App\Http\Controllers\Controller;
+use Freengersdev\firstmodule\Example;
 
 class ExampleController extends Controller
 {

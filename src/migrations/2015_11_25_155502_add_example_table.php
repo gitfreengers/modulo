@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Eloquent\Model;
-use FreengersDev\Todo\Example;
+use Freengersdev\firstmodule\Example;
 
 class AddExampleTable extends Migration
 {

@@ -1,5 +1,5 @@
 {
-	"name" : "freengers-dev/firstmodule",
+	"name" : "freengersdev/firstmodule",
 	"description" : "Ejemplo de modulo para laravel",
 	"license" : "Self",
 	"authors" : [{
@@ -9,7 +9,7 @@
 	],
 	"autoload" : {
 		"psr-4" : {
-			"freengers\\" : "src/"
+			"Freengersdev\\firstmodule\\" : "src/"
 		}
 	},
 	"minimum-stability" : "dev",

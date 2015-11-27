@@ -1,6 +1,6 @@
 <?php
 
-namespace freengers;
+namespace Freengersdev\firstmodule;
 
 use Illuminate\Database\Eloquent\Model;
 
