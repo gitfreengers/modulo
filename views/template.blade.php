@@ -70,8 +70,6 @@
   	@yield('body')
   </div>
 
-  	{!! Html::script('assets/plugins/jQuery/jQuery-2.1.3.min.js') !!} 
-	{!! Html::script('assets/js/bootstrap.min.js') !!} 
 
   <script type="text/javascript">
   	$('.tip').tooltip();

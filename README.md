@@ -12,6 +12,20 @@ Una vez realizada la instalación, agregar el proveedor al archivo "config/app.p
 Freengersdev\firstmodule\ExampleServiceProvider::class,	
 ```
 
+Tambien ocupa los siguientes providers 
+
+```
+    	Collective\Html\HtmlServiceProvider::class,
+```
+
+y los siguientes alies: 
+
+```
+		'Form' 		=> 'Collective\Html\FormFacade',
+    	'Html' 		=> 'Collective\Html\HtmlFacade',
+```
+
+
 ### Paso 2: Instalación de migraciones
 
 Correr el comando vendor:publish para podere copiar las migraciones al directorio principal:
@@ -27,8 +41,4 @@ php artisan migrate
 
 ## Rutas 
 
-/todo/list
-
-/todo/edit
-
-/todo/create
+/todo

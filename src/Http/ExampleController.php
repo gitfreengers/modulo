@@ -4,6 +4,7 @@ namespace Freengersdev\firstmodule\Http;
 
 use App\Http\Controllers\Controller;
 use Freengersdev\firstmodule\Example;
+use Illuminate\Http\Request;
 
 class ExampleController extends Controller
 {
@@ -11,7 +12,7 @@ class ExampleController extends Controller
     {
         $examples = Example::orderBy('id', 'desc')->get();
 
-        return view('example::index')->with('examples', $examples);
+        return view('example::example/index')->with('examples', $examples);
     }
  
     /**
@@ -19,10 +20,11 @@ class ExampleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-    	$catalogTypes = CatalogTypes::find($id);
-    	return view('catalogs.form', ['title'=>'Nuevo catalogo', 'catalogs' => new Catalogs(), 'catalogTypes'=>$catalogTypes, 'id'=>$id]);
+    	$example = new Example();
+    	$mode = 'create';
+    	return view('example::example/form', compact('example', 'mode'));
     }
 
     /**
@@ -33,14 +35,10 @@ class ExampleController extends Controller
      */
     public function store(Request $request)
     {
-    	$catalog = new Catalogs([
-    		'catalogtypes_id' => $request->get('catalog_types_id'),
-    		'name' => $request->get('name'),
-    		'type' => $request->has('type')? $request->get('type') : null,
-    		'amount_suggestion' => $request->has('amount_suggestion')? $request->get('amount_suggestion') : 0
-    	]);
-    	$catalog->save();
-        return \Redirect::route('catalogos.index', [$request->get('catalog_types_id')])->with('success', 'Catalogo creado correctamente');
+    	$example = new Example();
+    	$example->fill($request->all());
+    	$example->save();
+        return \Redirect::route('todo.index')->with('success', 'Todo creado correctamente');
     }
 
     /**
@@ -62,9 +60,9 @@ class ExampleController extends Controller
      */
     public function edit($id)
     {
-        $catalog = Catalogs::find($id);
-        $catalogTypes = CatalogTypes::find($catalog->catalogtypes_id);
-    	return view('catalogs.form', ['title'=>'Editar catalogo', 'catalogs' => $catalog, 'catalogTypes'=>$catalogTypes, 'id'=>$catalogTypes->id]);
+        $example = Example::find($id);
+        $mode = 'update';
+        return view('example::example/form', compact('example', 'mode'));
     }
 
     /**
@@ -76,20 +74,11 @@ class ExampleController extends Controller
      */
     public function update(Request $request, $id)
     {
-    	$mensaje = '';
-    	$catalog = Catalogs::find($id);
-    	$catalogTypes = CatalogTypes::find($catalog->catalogtypes_id);
-    	if ($catalog->editable){
-	    	$catalog->name = $request->get('name');
-	    	$catalog->type = $request->has('type')? $request->get('type') : null;
-	    	$catalog->amount_suggestion = $request->has('amount_suggestion')? $request->get('amount_suggestion') : null;
-	    	$catalog->update();
-	    	$mensaje = 'Dato actualizado correctamente';
-    	}else{
-    		$mensaje = 'Este catalogo no es editable ni se puede borrar';
-    	}
-    	
-    	return \Redirect::route('catalogos.index', [$catalogTypes->id])->with('success', $mensaje);
+
+    	$example = Example::find($id);
+    	$example->fill($request->all());
+    	$example->update();
+    	return \Redirect::route('todo.index')->with('success', 'Todo actualizado correctamente');
     }
 
     /**
@@ -101,15 +90,20 @@ class ExampleController extends Controller
     public function destroy($id)
     {
         //
-    	$catalog = Catalogs::find($id);
-        $catalogTypes = CatalogTypes::find($catalog->catalogtypes_id);
-        $mensaje = '';
-        if ($catalog->editable){
-	    	Catalogs::destroy($id);
-	    	$mensaje = 'Dato eliminado del catalogo';
-        }else{
-        	$mensaje = 'Este catalogo no es editable ni se puede borrar';
-        }
-    	return \Redirect::route('catalogos.index', [$catalogTypes->id])->with('success', $mensaje);
+    	Example::destroy($id);
+    	return \Redirect::route('todo.index')->with('success', 'Todo eliminado correctamente');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function delete($id)
+    {
+        //
+    	Example::destroy($id);
+    	return \Redirect::route('todo.index')->with('success', 'Todo eliminado correctamente');
     }
 }
