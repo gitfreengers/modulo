@@ -16,4 +16,7 @@
 	"require" : {
 		"illuminate/support" : "~5"
 	}
+	"suggest": {
+        "freengers-dev/firstmodule": "Las vistas estan escritas con Bootstrap 3 y fortawesome se sugiere tenerlos instalados"
+    }
 }

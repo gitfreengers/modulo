@@ -1,7 +1,18 @@
 <h1>Listado</h1>
 
-<ul>
-    @foreach ($examples as $example)
-    <li>{{$example->todo}}</li>
-    @endforeach
-</ul>
+<table>
+	<thead>
+		<th>Id usuario</th>
+		<th>Descripcion</th>
+		<th>Completada</th>
+	</thead>
+	<tbody>	
+	    @foreach ($examples as $example)
+		<td>{{$example->user_id}}</td>
+		<td>{{$example->todo}}</td>
+		<td>{{$example->completed}}</td>
+		@endforeach
+		
+	</tbody>
+
+</table>
